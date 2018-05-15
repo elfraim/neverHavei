@@ -1,0 +1,55 @@
+body {
+  background-color: #0f0f0f;
+}
+
+.App {
+  display: grid;
+  grid-template: repeat(auto-fill, minmax(250px, 1fr)), 5 / repeat(auto-fill, minmax(250px, 1fr, 5));
+  width: 100%;
+  height: 100%;
+  /*background-image: url('./bg.gif');*/
+  background-size: 100%;
+  border: 1px solid black;
+  background-color: #0f0f0f;
+  padding: 1px 1px 1px 1px;
+}
+
+#Card {
+  grid-area: 2 / 1 / 4 / 5;
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  text-align: center;
+  height: 100%;
+}
+@media (max-width: 600px) {
+  #Card {
+    align-self: start;
+    height: 90%;
+  }
+}
+
+#Card p{
+  grid-area: 2 / 1 / 2 / 4;
+  padding: 5px 5px 5px 5px;
+  color: #e91115;
+  text-shadow: 3px 2px black;
+}
+
+#buttonDiv {
+  grid-area: 1 / 4 / 2 / 5;
+  justify-self: center;
+  text-align: center;
+}
+
+#playButton {
+  color: white;
+}
+
+#playButton:active {
+  font-size: 20px;
+}
+
+#popUpHelp {
+  color: black;
+  padding: 10px 10px 10px 10px;
+}
