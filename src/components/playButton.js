@@ -8,8 +8,8 @@ export const PlayButton = (props) => {
         closeOnDocumentClick>
            <div id="popUpHelp">
                 <p> Each friend clicks on his turn.
-                    If someone has done the following question
-                    he takes a shot (Or sip! Depends how many rounds you want to go)
+                    If someone has completed the following question
+                    he takes a shot (Or sip! Depends how many rounds you want to go).
                     Beware of Trap missions!
                 </p> 
            </div>
