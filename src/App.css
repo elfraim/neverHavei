@@ -19,12 +19,12 @@ body {
   display: grid;
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   text-align: center;
-  height: 100%;
+  height: 800px;
 }
 @media (max-width: 600px) {
   #Card {
     align-self: start;
-    height: 90%;
+    height: 550px;
   }
 }
 
@@ -39,17 +39,14 @@ body {
   grid-area: 1 / 4 / 2 / 5;
   justify-self: center;
   text-align: center;
-}
-
-#playButton {
-  color: white;
-}
-
-#playButton:active {
-  font-size: 20px;
+  cursor: pointer;
 }
 
 #popUpHelp {
   color: black;
   padding: 10px 10px 10px 10px;
+}
+
+#helpButtonText:hover {
+  color: #e91115;
 }
