@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import {Animated} from "react-animated-css";
+
+
+
+
 
 class Card extends Component {
     render() {

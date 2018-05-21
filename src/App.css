@@ -20,6 +20,9 @@ body {
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   text-align: center;
   height: 800px;
+  width: 100%;
+  animation-duration: 1s;
+  animation-name: bounceIn;
 }
 @media (max-width: 600px) {
   #Card {
@@ -45,8 +48,28 @@ body {
 #popUpHelp {
   color: black;
   padding: 10px 10px 10px 10px;
+  animation-duration: 1s;
+  animation-name: bounceIn;
 }
 
 #helpButtonText:hover {
   color: #e91115;
+}
+
+
+
+/* Animations */
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
