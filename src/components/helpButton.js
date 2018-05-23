@@ -10,7 +10,7 @@ export const HelpButton = (props) => {
                     If someone has completed the following question
                     he takes a shot (Or sip! Depends how many rounds you want to go).
                     Beware of Trap missions!
-                </p> 
+                </p>
            </div>
         </Popup>
     )

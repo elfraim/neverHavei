@@ -29,6 +29,5 @@ export const TrapQuestions = [
     'TRAP! Would you rather Win $50,000 or let your best friend win $500,000?',
     'TRAP! Would you rather know how you will die or when you will die?',
     'TRAP! Would you rather speak all languages or be able to speak to all animals?',
-    
 
 ]

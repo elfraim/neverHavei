@@ -12,6 +12,7 @@ body {
   border: 1px solid black;
   background-color: #0f0f0f;
   padding: 1px 1px 1px 1px;
+  background-image: url('./bg.jpg')
 }
 
 #Card {
@@ -34,7 +35,7 @@ body {
 #Card p{
   grid-area: 2 / 1 / 2 / 4;
   padding: 5px 5px 5px 5px;
-  color: #e91115;
+  color: #ffffff;
   text-shadow: 3px 2px black;
 }
 
