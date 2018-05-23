@@ -4,13 +4,16 @@ import {HelpButton} from './components/helpButton';
 import {Questions, TrapQuestions} from './data/questions';
 import './App.css';
 
-const titleStyle = {
+let titleStyle = {
   color:      'white',
   gridColumn: '2/4',
   justifySelf: 'center',
   alignSelf: 'center',
-  fontSize: '25px',
-  textDecoration: 'none'
+  fontSize: '22px',
+  textDecoration: 'none',
+  width: '230px',
+  textTransform: 'uppercase',
+  fontWeight: '900'
 }
 class App extends Component {
   constructor(props){
@@ -23,7 +26,8 @@ class App extends Component {
                      'If someone has done the following question ' +
                      'he takes a shot (Or sip! Depends how many rounds you want to go) ' +
                      'Beware of Trap missions!' ,
-        animate: 'bounceIn'
+        animate: 'bounceIn',
+        textColor: 'white'
     }
 }
 
@@ -31,7 +35,8 @@ class App extends Component {
 generateTrap = () => {
   const randIndex = Math.floor(Math.random() * 5);
   this.setState({
-    theQuestion: TrapQuestions[randIndex]
+    theQuestion: TrapQuestions[randIndex],
+    textColor: 'orange'
   })
 }
 
@@ -44,7 +49,8 @@ generateQuestion = () => {
       this.setState({
         theQuestion: 'NEVER HAVE I EVER ' + Questions[index].toUpperCase(),
         roundNumber: this.state.roundNumber + 1,
-        animate: 'bounceIn'
+        animate: 'bounceIn',
+        textColor: 'white'
       })
       Questions.splice(index, 1);
     }
@@ -53,10 +59,14 @@ generateQuestion = () => {
   render() {
     return (
       <div className="App">
-        <a style={titleStyle} href="http://elfraiman.com">Never Have I Ever</a>
-        <p style={{color: 'white', gridColumn: '1 / 2', gridRow: '1/2', justifySelf: 'center'}}>Round #{this.state.roundNumber}</p>
-        <Card question={this.state.theQuestion} handleClick={this.generateQuestion} animate={this.state.animate}/>
-        <HelpButton handleClick={this.generateQuestion} animate={this.state.animate}/>
+        <a style={titleStyle} href="http://elfraiman.com">Never have I ever</a>
+        <p style={{color: 'white', gridColumn: '1 / 2', gridRow: '1/2', justifySelf: 'center', width: '80px'}}>Round #{this.state.roundNumber}</p>
+        <Card question={this.state.theQuestion}
+          handleClick={this.generateQuestion}
+          animate={this.state.animate}
+          color={this.state.textColor} />
+        <HelpButton handleClick={this.generateQuestion}
+          animate={this.state.animate} />
       </div>
     );
   }
