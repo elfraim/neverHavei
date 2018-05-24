@@ -4,17 +4,7 @@ import {HelpButton} from './components/helpButton';
 import {Questions, TrapQuestions} from './data/questions';
 import './App.css';
 
-let titleStyle = {
-  color:      'white',
-  gridColumn: '2/4',
-  justifySelf: 'center',
-  alignSelf: 'center',
-  fontSize: '22px',
-  textDecoration: 'none',
-  width: '35%',
-  textTransform: 'uppercase',
-  fontWeight: '900'
-}
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -56,8 +46,8 @@ generateQuestion = () => {
   render() {
     return (
       <div className="App">
-        <a style={titleStyle} href="http://elfraiman.com" id="title">Never have I ever</a>
-        <p style={{color: 'white', gridColumn: '1 / 2', gridRow: '1/2', justifySelf: 'center', width: '50%'}}>Round #{this.state.roundNumber}</p>
+        <a href="http://elfraiman.com" id="title">Never have I ever</a>
+        <p style={{color: 'white', gridColumn: '1 / 2', gridRow: '1/2', justifySelf: 'center', width: '20%'}}>Round #{this.state.roundNumber}</p>
         <Card question={this.state.theQuestion}
           handleClick={this.generateQuestion}
           animate={this.state.animate}
