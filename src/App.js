@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from './components/card';
 import {HelpButton} from './components/helpButton';
 import {Questions, TrapQuestions} from './data/questions';
+import {AddQuestion} from './components/addQuestion';
 import './App.css';
 
 
@@ -43,6 +44,10 @@ generateQuestion = () => {
     }
 }
 
+addQuestion = (event) => {
+  
+}
+
   render() {
     return (
       <div className="App">
@@ -54,7 +59,7 @@ generateQuestion = () => {
           color={this.state.textColor} />
         <HelpButton handleClick={this.generateQuestion}
           animate={this.state.animate} />
-          <a id="credits">Elan Fraiman</a>
+          <AddQuestion/>
       </div>
     );
   }
