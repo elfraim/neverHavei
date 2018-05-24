@@ -11,7 +11,7 @@ let titleStyle = {
   alignSelf: 'center',
   fontSize: '22px',
   textDecoration: 'none',
-  width: '230px',
+  width: '35%',
   textTransform: 'uppercase',
   fontWeight: '900'
 }
@@ -22,10 +22,7 @@ class App extends Component {
     this.state = {
         questions: Questions,
         roundNumber: 0,
-        theQuestion: 'Each friend clicks on his turn. ' +
-                     'If someone has done the following question ' +
-                     'he takes a shot (Or sip! Depends how many rounds you want to go) ' +
-                     'Beware of Trap missions!' ,
+        theQuestion: 'Anyone who at some point in their lives has done the action, must drink, Click HELP for more varations',
         animate: 'bounceIn',
         textColor: 'white'
     }
@@ -59,14 +56,15 @@ generateQuestion = () => {
   render() {
     return (
       <div className="App">
-        <a style={titleStyle} href="http://elfraiman.com">Never have I ever</a>
-        <p style={{color: 'white', gridColumn: '1 / 2', gridRow: '1/2', justifySelf: 'center', width: '80px'}}>Round #{this.state.roundNumber}</p>
+        <a style={titleStyle} href="http://elfraiman.com" id="title">Never have I ever</a>
+        <p style={{color: 'white', gridColumn: '1 / 2', gridRow: '1/2', justifySelf: 'center', width: '50%'}}>Round #{this.state.roundNumber}</p>
         <Card question={this.state.theQuestion}
           handleClick={this.generateQuestion}
           animate={this.state.animate}
           color={this.state.textColor} />
         <HelpButton handleClick={this.generateQuestion}
           animate={this.state.animate} />
+          <a id="credits">Elan Fraiman</a>
       </div>
     );
   }

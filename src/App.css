@@ -59,20 +59,30 @@ body {
   animation-name: bounceIn;
   background-color: #4f77b3;
   font-weight: 800;
+  display: block;
+  position: relative;
 }
 
 #helpButtonText:hover {
   color: #e91115;
 }
 
+#credits {
+  grid-column: 2 / 4; 
+  color: rgb(204, 204, 204);
+  font-family: 'Hack';
+  font-style: italic;
+  font-size: 12px;
+  justify-self: center;
+}
+
 /* Mobile */
 @media (max-width: 600px) {
   #Card {
     align-self: start;
-    height: 580px;
     background-image: url('./bg.jpg');
-    background-size: 100% 100%;
     background-position: center;
+    background-size: 100% 100%;
   }
   .App {
     background-size: 100% 100%;
