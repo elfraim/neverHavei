@@ -4,11 +4,12 @@ import Popup from "reactjs-popup";
 
 export const AddQuestion = (props) => {
     return (
-        <div id="questionBtnDiv">
-        <Popup trigger={<button id="addQuestion" style={{}}>Add Question</button>} modal
+        <Popup trigger={<button id="addQuestion">Add Question</button>} modal
         closeOnDocumentClick>
-            <input id="addQuestionInput" placeholder="Never have i ever"></input>
+        <div style={{width: '100%'}}>
+            <input onChange={props.onChange}id="addQuestionInput" placeholder="Never have i ever"></input>
+            <button type="submit" style={{width: '100%'}} onClick={props.onClick}>Add</button>
+            </div>
         </Popup>
-        </div>
     )
 }

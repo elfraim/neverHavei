@@ -15,7 +15,8 @@ class App extends Component {
         roundNumber: 0,
         theQuestion: 'Anyone who at some point in their lives has done the action, must drink, Click HELP for more varations',
         animate: 'bounceIn',
-        textColor: 'white'
+        textColor: 'white',
+        addQuestion: ''
     }
 }
 
@@ -45,7 +46,16 @@ generateQuestion = () => {
 }
 
 addQuestion = (event) => {
-  
+  this.setState({
+    addQuestion: event.target.value
+  })
+}
+
+handleAddQuestionClick = () => {
+  Questions.push(this.state.addQuestion)
+  this.setState({
+    theQuestion: `${this.state.addQuestion} Has been added`
+  })
 }
 
   render() {
@@ -53,13 +63,20 @@ addQuestion = (event) => {
       <div className="App">
         <a href="http://elfraiman.com" id="title">Never have I ever</a>
         <p style={{color: 'white', gridColumn: '1 / 2', gridRow: '1/2', justifySelf: 'center', width: '20%'}}>Round #{this.state.roundNumber}</p>
-        <Card question={this.state.theQuestion}
+        <Card
+          question={this.state.theQuestion}
           handleClick={this.generateQuestion}
           animate={this.state.animate}
-          color={this.state.textColor} />
-        <HelpButton handleClick={this.generateQuestion}
-          animate={this.state.animate} />
-          <AddQuestion/>
+          color={this.state.textColor}
+        />
+        <HelpButton
+          handleClick={this.generateQuestion}
+          animate={this.state.animate}
+        />
+        <AddQuestion
+          onChange={this.addQuestion}
+          onClick={this.handleAddQuestionClick}
+        />
       </div>
     );
   }
